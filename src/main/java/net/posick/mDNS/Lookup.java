@@ -11,6 +11,7 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+import net.posick.mDNS.utils.Wait;
 import org.xbill.DNS.DClass;
 import org.xbill.DNS.Message;
 import org.xbill.DNS.MulticastDNSUtils;
@@ -22,8 +23,6 @@ import org.xbill.DNS.ResolverListener;
 import org.xbill.DNS.Section;
 import org.xbill.DNS.TextParseException;
 import org.xbill.DNS.Type;
-
-import net.posick.mDNS.utils.Wait;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class Lookup extends MulticastDNSLookupBase

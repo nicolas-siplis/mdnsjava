@@ -14,6 +14,13 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import net.posick.mDNS.net.DatagramProcessor;
+import net.posick.mDNS.net.Packet;
+import net.posick.mDNS.net.PacketListener;
+import net.posick.mDNS.utils.Executors;
+import net.posick.mDNS.utils.ListenerProcessor;
+import net.posick.mDNS.utils.Misc;
+import net.posick.mDNS.utils.Wait;
 import org.xbill.DNS.Cache;
 import org.xbill.DNS.Credibility;
 import org.xbill.DNS.Flags;
@@ -33,15 +40,6 @@ import org.xbill.DNS.SetResponse;
 import org.xbill.DNS.TSIG;
 import org.xbill.DNS.WireParseException;
 
-import net.posick.mDNS.MulticastDNSCache.CacheMonitor;
-import net.posick.mDNS.net.DatagramProcessor;
-import net.posick.mDNS.net.Packet;
-import net.posick.mDNS.net.PacketListener;
-import net.posick.mDNS.utils.Executors;
-import net.posick.mDNS.utils.ListenerProcessor;
-import net.posick.mDNS.utils.Misc;
-import net.posick.mDNS.utils.Wait;
-
 /**
  * Implements the Multicast DNS portions of the MulticastDNSQuerier in accordance to RFC 6762.
  * 
@@ -57,7 +55,7 @@ import net.posick.mDNS.utils.Wait;
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class MulticastDNSMulticastOnlyQuerier implements Querier, PacketListener
 {
-    private static final Logger logger = Misc.getLogger(MulticastDNSMulticastOnlyQuerier.class, true); 
+    private static final Logger logger = Misc.getLogger(MulticastDNSMulticastOnlyQuerier.class, true);
     
     public class ListenerWrapper implements ResolverListener
     {
@@ -308,7 +306,7 @@ public class MulticastDNSMulticastOnlyQuerier implements Querier, PacketListener
     protected Executors executors = Executors.newInstance();
     
     
-    private final CacheMonitor cacheMonitor = new CacheMonitor()
+    private final MulticastDNSCache.CacheMonitor cacheMonitor = new MulticastDNSCache.CacheMonitor()
     {
         private final List authRecords = new ArrayList();
         

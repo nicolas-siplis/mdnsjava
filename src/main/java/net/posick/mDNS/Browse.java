@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import net.posick.mDNS.utils.Executors;
+import net.posick.mDNS.utils.ListenerProcessor;
 import org.xbill.DNS.DClass;
 import org.xbill.DNS.Flags;
 import org.xbill.DNS.Header;
@@ -17,9 +19,6 @@ import org.xbill.DNS.Record;
 import org.xbill.DNS.ResolverListener;
 import org.xbill.DNS.Section;
 import org.xbill.DNS.Type;
-
-import net.posick.mDNS.utils.Executors;
-import net.posick.mDNS.utils.ListenerProcessor;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class Browse extends MulticastDNSLookupBase

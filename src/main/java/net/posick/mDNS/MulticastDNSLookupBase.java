@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import net.posick.mDNS.utils.Misc;
 import org.xbill.DNS.AAAARecord;
 import org.xbill.DNS.ARecord;
 import org.xbill.DNS.DClass;
@@ -28,8 +29,6 @@ import org.xbill.DNS.Section;
 import org.xbill.DNS.TXTRecord;
 import org.xbill.DNS.TextParseException;
 import org.xbill.DNS.Type;
-
-import net.posick.mDNS.utils.Misc;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
 public abstract class MulticastDNSLookupBase implements Closeable, Constants

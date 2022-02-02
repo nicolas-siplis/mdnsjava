@@ -17,6 +17,9 @@ import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import net.posick.mDNS.utils.Executors;
+import net.posick.mDNS.utils.ListenerProcessor;
+import net.posick.mDNS.utils.Misc;
 import org.xbill.DNS.AAAARecord;
 import org.xbill.DNS.ARecord;
 import org.xbill.DNS.DClass;
@@ -36,9 +39,6 @@ import org.xbill.DNS.Type;
 import org.xbill.DNS.Update;
 
 import net.posick.mDNS.Lookup.Domain;
-import net.posick.mDNS.utils.Executors;
-import net.posick.mDNS.utils.ListenerProcessor;
-import net.posick.mDNS.utils.Misc;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class MulticastDNSService extends MulticastDNSLookupBase
@@ -779,27 +779,27 @@ public class MulticastDNSService extends MulticastDNSLookupBase
     public Set<Domain> getBrowseDomains(final Set<Name> searchPath)
     {
         Set<Domain> results = new LinkedHashSet<Domain>();
-        Name[] defaultDomains = Constants.ALL_MULTICAST_DNS_DOMAINS;
+        Name[] defaultDomains = ALL_MULTICAST_DNS_DOMAINS;
         for (Name name : defaultDomains)
         {
             results.add(new Domain(name));
         }
-        results.addAll(getDomains(new String[] {Constants.DEFAULT_BROWSE_DOMAIN_NAME,
-                                                Constants.BROWSE_DOMAIN_NAME,
-                                                Constants.LEGACY_BROWSE_DOMAIN_NAME}, searchPath.toArray(new Name[searchPath.size()])));
+        results.addAll(getDomains(new String[] {DEFAULT_BROWSE_DOMAIN_NAME,
+                BROWSE_DOMAIN_NAME,
+                LEGACY_BROWSE_DOMAIN_NAME}, searchPath.toArray(new Name[searchPath.size()])));
         return results;
     }
     
     public Set<Domain> getDefaultBrowseDomains(final Set<Name> searchPath)
     {
         Set<Domain> results = new LinkedHashSet<Domain>();
-        Name[] defaultDomains = Constants.ALL_MULTICAST_DNS_DOMAINS;
+        Name[] defaultDomains = ALL_MULTICAST_DNS_DOMAINS;
         for (Name name : defaultDomains)
         {
             results.add(new Domain(name));
         }
-        searchPath.addAll(Arrays.asList(Constants.ALL_MULTICAST_DNS_DOMAINS));
-        results.addAll(getDomains(new String[] {Constants.DEFAULT_BROWSE_DOMAIN_NAME}, searchPath.toArray(new Name[searchPath.size()])));
+        searchPath.addAll(Arrays.asList(ALL_MULTICAST_DNS_DOMAINS));
+        results.addAll(getDomains(new String[] {DEFAULT_BROWSE_DOMAIN_NAME}, searchPath.toArray(new Name[searchPath.size()])));
         return results;
     }
     
@@ -807,13 +807,13 @@ public class MulticastDNSService extends MulticastDNSLookupBase
     public Set<Domain> getDefaultRegistrationDomains(final Set<Name> searchPath)
     {
         Set<Domain> results = new LinkedHashSet<Domain>();
-        Name[] defaultDomains = Constants.ALL_MULTICAST_DNS_DOMAINS;
+        Name[] defaultDomains = ALL_MULTICAST_DNS_DOMAINS;
         for (Name name : defaultDomains)
         {
             results.add(new Domain(name));
         }
-        searchPath.addAll(Arrays.asList(Constants.ALL_MULTICAST_DNS_DOMAINS));
-        results.addAll(getDomains(new String[] {Constants.DEFAULT_REGISTRATION_DOMAIN_NAME}, searchPath.toArray(new Name[searchPath.size()])));
+        searchPath.addAll(Arrays.asList(ALL_MULTICAST_DNS_DOMAINS));
+        results.addAll(getDomains(new String[] {DEFAULT_REGISTRATION_DOMAIN_NAME}, searchPath.toArray(new Name[searchPath.size()])));
         return results;
     }
     
@@ -821,13 +821,13 @@ public class MulticastDNSService extends MulticastDNSLookupBase
     public Set<Domain> getRegistrationDomains(final Set<Name> searchPath)
     {
         Set<Domain> results = new LinkedHashSet<Domain>();
-        Name[] defaultDomains = Constants.ALL_MULTICAST_DNS_DOMAINS;
+        Name[] defaultDomains = ALL_MULTICAST_DNS_DOMAINS;
         for (Name name : defaultDomains)
         {
             results.add(new Domain(name));
         }
-        results.addAll(getDomains(new String[] {Constants.DEFAULT_REGISTRATION_DOMAIN_NAME,
-                                                Constants.REGISTRATION_DOMAIN_NAME}, searchPath.toArray(new Name[searchPath.size()])));
+        results.addAll(getDomains(new String[] {DEFAULT_REGISTRATION_DOMAIN_NAME,
+                REGISTRATION_DOMAIN_NAME}, searchPath.toArray(new Name[searchPath.size()])));
         return results;
     }
     

@@ -16,6 +16,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import net.posick.mDNS.utils.Executors;
+import net.posick.mDNS.utils.Misc;
 import org.xbill.DNS.Cache;
 import org.xbill.DNS.Credibility;
 import org.xbill.DNS.DClass;
@@ -32,9 +34,6 @@ import org.xbill.DNS.Record;
 import org.xbill.DNS.Section;
 import org.xbill.DNS.SetResponse;
 import org.xbill.DNS.Type;
-
-import net.posick.mDNS.utils.Executors;
-import net.posick.mDNS.utils.Misc;
 
 /**
  * A cache of mDNS records and responses. The cache obeys TTLs, so items are

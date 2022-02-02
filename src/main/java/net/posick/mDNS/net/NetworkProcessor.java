@@ -8,11 +8,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.xbill.DNS.Options;
-
 import net.posick.mDNS.utils.ExecutionTimer;
 import net.posick.mDNS.utils.Executors;
 import net.posick.mDNS.utils.Misc;
+import org.xbill.DNS.Options;
 
 public abstract class NetworkProcessor implements Runnable, Closeable
 {

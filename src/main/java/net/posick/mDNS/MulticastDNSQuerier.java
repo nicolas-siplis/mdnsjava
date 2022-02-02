@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import net.posick.mDNS.utils.ListenerProcessor;
+import net.posick.mDNS.utils.Misc;
 import org.xbill.DNS.ExtendedResolver;
 import org.xbill.DNS.Flags;
 import org.xbill.DNS.Header;
@@ -23,9 +25,6 @@ import org.xbill.DNS.Resolver;
 import org.xbill.DNS.ResolverListener;
 import org.xbill.DNS.Section;
 import org.xbill.DNS.TSIG;
-
-import net.posick.mDNS.utils.ListenerProcessor;
-import net.posick.mDNS.utils.Misc;
 
 /**
  * The MulticastDNSQuerier is a responder that integrates multicast and unicast DNS in accordance to the
