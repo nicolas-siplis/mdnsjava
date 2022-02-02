@@ -3,6 +3,7 @@ package net.posick.mDNS;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
@@ -1004,7 +1005,7 @@ public class MulticastDNSMulticastOnlyQuerier implements Querier, PacketListener
     
     public void setEDNS(final int level)
     {
-        setEDNS(level, 0, 0, null);
+        setEDNS(level, 0, 0, (List) null);
     }
     
     
@@ -1078,8 +1079,13 @@ public class MulticastDNSMulticastOnlyQuerier implements Querier, PacketListener
     {
         setTimeout(secs, 0);
     }
-    
-    
+
+    @Override
+    public void setTimeout(Duration duration) {
+        setTimeout((int) duration.toSeconds());
+    }
+
+
     /**
      * {@inheritDoc}
      */
@@ -1289,8 +1295,8 @@ public class MulticastDNSMulticastOnlyQuerier implements Querier, PacketListener
                     if (cacheRecord.getTTL() > 0)
                     {
                         SetResponse response = cache.lookupRecords(cacheRecord.getName(), cacheRecord.getType(), Credibility.ANY);
-                        RRset[] rrs = response.answers();
-                        if ((rrs != null) && (rrs.length > 0))
+                        List<RRset> rrs = response.answers();
+                        if ((rrs != null) && (rrs.size() > 0))
                         {
                             Record[] cachedRecords = MulticastDNSUtils.extractRecords(rrs);
                             if ((cachedRecords != null) && (cachedRecords.length > 0))

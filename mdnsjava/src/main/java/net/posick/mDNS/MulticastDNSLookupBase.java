@@ -567,14 +567,14 @@ public abstract class MulticastDNSLookupBase implements Closeable, Constants
     {
         if (defaultSearchPath == null)
         {
-            Name[] configuredSearchPath = ResolverConfig.getCurrentConfig().searchPath();
-            defaultSearchPath = new Name[(configuredSearchPath != null ? configuredSearchPath.length : 0) + defaultQuerier.getMulticastDomains().length];
+            List<Name> configuredSearchPath = ResolverConfig.getCurrentConfig().searchPath();
+            defaultSearchPath = new Name[(configuredSearchPath != null ? configuredSearchPath.size() : 0) + defaultQuerier.getMulticastDomains().length];
             int startPos = 0;
             if (configuredSearchPath != null)
             {
-                defaultSearchPath = new Name[configuredSearchPath.length + defaultQuerier.getMulticastDomains().length];
-                System.arraycopy(configuredSearchPath, 0, defaultSearchPath, startPos, configuredSearchPath.length);
-                startPos = configuredSearchPath.length;
+                defaultSearchPath = new Name[configuredSearchPath.size() + defaultQuerier.getMulticastDomains().length];
+                System.arraycopy(configuredSearchPath.toArray(), 0, defaultSearchPath, startPos, configuredSearchPath.size());
+                startPos = configuredSearchPath.size();
             } else
             {
                 defaultSearchPath = new Name[defaultQuerier.getMulticastDomains().length];
