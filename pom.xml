@@ -20,7 +20,7 @@
         <dependency>
             <groupId>com.github.hivestreaming</groupId>
             <artifactId>dnsjava</artifactId>
-            <version>3.4.3</version>
+            <version>15f53e0e93</version>
         </dependency>
     </dependencies>
 
