@@ -6,10 +6,10 @@ package net.posick.mDNS;
 import java.io.Closeable;
 import java.io.IOException;
 
-import org.xbill.DNS.Message;
-import org.xbill.DNS.Name;
-import org.xbill.DNS.Resolver;
-import org.xbill.DNS.ResolverListener;
+import net.posick.DNS.Message;
+import net.posick.DNS.Name;
+import net.posick.DNS.Resolver;
+import net.posick.DNS.ResolverListener;
 
 /**
  * The Querier is an extension of the Resolver for asynchronous, multicast name resolution, typically

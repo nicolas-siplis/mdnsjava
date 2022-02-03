@@ -1,6 +1,6 @@
 package net.posick.mDNS;
 
-import org.xbill.DNS.Name;
+import net.posick.DNS.Name;
 
 public interface Constants
 {

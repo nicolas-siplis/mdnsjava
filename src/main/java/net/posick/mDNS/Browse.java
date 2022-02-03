@@ -9,16 +9,16 @@ import java.util.logging.Logger;
 
 import net.posick.mDNS.utils.Executors;
 import net.posick.mDNS.utils.ListenerProcessor;
-import org.xbill.DNS.DClass;
-import org.xbill.DNS.Flags;
-import org.xbill.DNS.Header;
-import org.xbill.DNS.Message;
-import org.xbill.DNS.MulticastDNSUtils;
-import org.xbill.DNS.Name;
-import org.xbill.DNS.Record;
-import org.xbill.DNS.ResolverListener;
-import org.xbill.DNS.Section;
-import org.xbill.DNS.Type;
+import net.posick.DNS.DClass;
+import net.posick.DNS.Flags;
+import net.posick.DNS.Header;
+import net.posick.DNS.Message;
+import net.posick.DNS.MulticastDNSUtils;
+import net.posick.DNS.Name;
+import net.posick.DNS.Record;
+import net.posick.DNS.ResolverListener;
+import net.posick.DNS.Section;
+import net.posick.DNS.Type;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class Browse extends MulticastDNSLookupBase

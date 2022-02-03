@@ -18,22 +18,22 @@ import java.util.logging.Logger;
 
 import net.posick.mDNS.utils.Executors;
 import net.posick.mDNS.utils.Misc;
-import org.xbill.DNS.Cache;
-import org.xbill.DNS.Credibility;
-import org.xbill.DNS.DClass;
-import org.xbill.DNS.Flags;
-import org.xbill.DNS.Header;
-import org.xbill.DNS.Message;
-import org.xbill.DNS.MulticastDNSUtils;
-import org.xbill.DNS.Name;
-import org.xbill.DNS.Opcode;
-import org.xbill.DNS.Options;
-import org.xbill.DNS.RRset;
-import org.xbill.DNS.Rcode;
-import org.xbill.DNS.Record;
-import org.xbill.DNS.Section;
-import org.xbill.DNS.SetResponse;
-import org.xbill.DNS.Type;
+import net.posick.DNS.Cache;
+import net.posick.DNS.Credibility;
+import net.posick.DNS.DClass;
+import net.posick.DNS.Flags;
+import net.posick.DNS.Header;
+import net.posick.DNS.Message;
+import net.posick.DNS.MulticastDNSUtils;
+import net.posick.DNS.Name;
+import net.posick.DNS.Opcode;
+import net.posick.DNS.Options;
+import net.posick.DNS.RRset;
+import net.posick.DNS.Rcode;
+import net.posick.DNS.Record;
+import net.posick.DNS.Section;
+import net.posick.DNS.SetResponse;
+import net.posick.DNS.Type;
 
 /**
  * A cache of mDNS records and responses. The cache obeys TTLs, so items are

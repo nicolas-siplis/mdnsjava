@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.xbill.DNS.Name;
-import org.xbill.DNS.TextParseException;
+import net.posick.DNS.Name;
+import net.posick.DNS.TextParseException;
 
 public class ServiceName extends Name
 {

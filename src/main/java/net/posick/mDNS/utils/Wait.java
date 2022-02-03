@@ -1,6 +1,6 @@
 package net.posick.mDNS.utils;
 
-import org.xbill.DNS.Options;
+import net.posick.DNS.Options;
 
 import net.posick.mDNS.Querier;
 

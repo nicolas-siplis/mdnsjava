@@ -20,7 +20,7 @@ The Multicast DNS (mDNS) [[RFC 6762](http://tools.ietf.org/html/rfc6762)] & DNS-
 ## <a name="changelog"></a> Changelog
 
 ### Version 2.2.0 Changes
-* **Changed Java Package from org.xbill.mDNS -> net.posick.mdns**. mdnsjava uses dnsjava for DNS functionality, but is not part of the dnsjava project.
+* **Changed Java Package from net.posick.mDNS -> net.posick.mdns**. mdnsjava uses dnsjava for DNS functionality, but is not part of the dnsjava project.
 * **Full Maven Support**. Maven is now the build system for mdnsjava.
 
 ## <a name="dependencies"></a> Dependencies

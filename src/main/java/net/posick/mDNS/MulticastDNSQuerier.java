@@ -11,20 +11,20 @@ import java.util.logging.Logger;
 
 import net.posick.mDNS.utils.ListenerProcessor;
 import net.posick.mDNS.utils.Misc;
-import org.xbill.DNS.ExtendedResolver;
-import org.xbill.DNS.Flags;
-import org.xbill.DNS.Header;
-import org.xbill.DNS.Message;
-import org.xbill.DNS.MulticastDNSUtils;
-import org.xbill.DNS.Name;
-import org.xbill.DNS.Opcode;
-import org.xbill.DNS.Options;
-import org.xbill.DNS.Rcode;
-import org.xbill.DNS.Record;
-import org.xbill.DNS.Resolver;
-import org.xbill.DNS.ResolverListener;
-import org.xbill.DNS.Section;
-import org.xbill.DNS.TSIG;
+import net.posick.DNS.ExtendedResolver;
+import net.posick.DNS.Flags;
+import net.posick.DNS.Header;
+import net.posick.DNS.Message;
+import net.posick.DNS.MulticastDNSUtils;
+import net.posick.DNS.Name;
+import net.posick.DNS.Opcode;
+import net.posick.DNS.Options;
+import net.posick.DNS.Rcode;
+import net.posick.DNS.Record;
+import net.posick.DNS.Resolver;
+import net.posick.DNS.ResolverListener;
+import net.posick.DNS.Section;
+import net.posick.DNS.TSIG;
 
 /**
  * The MulticastDNSQuerier is a responder that integrates multicast and unicast DNS in accordance to the
@@ -67,7 +67,7 @@ public class MulticastDNSQuerier implements Querier
         public Message getResponse(final int timeout)
         throws IOException
         {
-            Message response = (Message) query.clone();
+            Message response = query.clone();
             Header header = response.getHeader();
             try
             {

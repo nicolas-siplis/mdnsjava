@@ -11,7 +11,7 @@ import java.net.SocketException;
 import java.util.Enumeration;
 import java.util.logging.Level;
 
-import org.xbill.DNS.Options;
+import net.posick.DNS.Options;
 
 public class DatagramProcessor extends NetworkProcessor
 {

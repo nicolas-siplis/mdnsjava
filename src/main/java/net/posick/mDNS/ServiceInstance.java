@@ -10,10 +10,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.xbill.DNS.Name;
-import org.xbill.DNS.SRVRecord;
-import org.xbill.DNS.TXTRecord;
-import org.xbill.DNS.TextParseException;
+import net.posick.DNS.Name;
+import net.posick.DNS.SRVRecord;
+import net.posick.DNS.TXTRecord;
+import net.posick.DNS.TextParseException;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class ServiceInstance implements Serializable

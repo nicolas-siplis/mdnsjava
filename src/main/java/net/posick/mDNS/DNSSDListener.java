@@ -1,6 +1,6 @@
 package net.posick.mDNS;
 
-import org.xbill.DNS.Message;
+import net.posick.DNS.Message;
 
 public interface DNSSDListener
 {

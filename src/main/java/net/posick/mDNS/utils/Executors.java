@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.xbill.DNS.Options;
+import net.posick.DNS.Options;
 
 import net.posick.mDNS.net.NetworkProcessor;
 
