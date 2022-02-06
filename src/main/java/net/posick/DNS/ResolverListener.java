@@ -1,0 +1,36 @@
+// SPDX-License-Identifier: BSD-3-Clause
+// Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
+
+package net.posick.DNS;
+
+import net.posick.DNS.Message;
+import net.posick.DNS.Resolver;
+
+import java.util.EventListener;
+
+/**
+ * An interface to the asynchronous resolver.
+ *
+ * @see Resolver
+ * @author Brian Wellington
+ * @deprecated Use {@link Resolver#sendAsync(Message)}
+ */
+@Deprecated
+public interface ResolverListener extends EventListener {
+
+  /**
+   * The callback used by an asynchronous resolver
+   *
+   * @param id The identifier returned by Resolver.sendAsync()
+   * @param m The response message as returned by the Resolver
+   */
+  void receiveMessage(Object id, Message m);
+
+  /**
+   * The callback used by an asynchronous resolver when an exception is thrown
+   *
+   * @param id The identifier returned by Resolver.sendAsync()
+   * @param e The thrown exception
+   */
+  void handleException(Object id, Exception e);
+}

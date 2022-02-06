@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: BSD-3-Clause
+// Copyright (c) 2002-2004 Brian Wellington (bwelling@xbill.org)
+
+package net.posick.DNS;
+
+import java.io.IOException;
+
+/**
+ * An exception thrown when unable to parse text.
+ *
+ * @author Brian Wellington
+ */
+public class TextParseException extends IOException {
+
+  public TextParseException() {
+    super();
+  }
+
+  public TextParseException(String s) {
+    super(s);
+  }
+
+  /** @since 3.5 */
+  public TextParseException(String name, String message) {
+    super("'" + name + "': " + message);
+  }
+
+  /** @since 3.5 */
+  public TextParseException(String name, String message, Exception inner) {
+    super("'" + name + "': " + message, inner);
+  }
+}
