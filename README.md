@@ -1,1 +1,1 @@
-Original project can be found at https://github.com/posicks/mdnsjava. It's been restructured to allow easy integration with the Java Platform Module Syste (JPMS). Due to a split package found in the dnsjava library, it was integrated into this project directly.
+Original project can be found at https://github.com/posicks/mdnsjava. It's been restructured to allow easy integration with the Java Platform Module System (JPMS). Due to a split package found in the dnsjava library, it was integrated into this project directly.
